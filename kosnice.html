@@ -1,0 +1,46 @@
+<head>
+    <title>Proba meteora</title>
+</head>
+
+<body>
+    <h1>Welcome to Meteor!</h1>
+    {{> proba}}
+</body>
+
+<template name="proba">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="new-object">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">dodtaj element</label>
+                        <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="title">
+                        <input type="text" name="color" class="form-control" id="exampleInputEmail1" placeholder="color">
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-default">
+                </form>
+            </div>
+            {{#each kosnice}}
+            <div class="col-xs-3">
+                <div class="panel panel-default">
+                    {{> kosnica}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</template>
+
+<template name="kosnica">
+    <h3>{{title}}</h3>
+    <h4>{{color}}</h4>
+    <button class="delete">delete</button>
+    <form class="edit-object">
+        <div class="form-group">
+            <label for="exampleInputEmail1">edituj element</label>
+            <input type="text" value="{{title}}" name="title" class="form-control" id="exampleInputEmail1" placeholder="{{title}}">
+            <input type="text" value="{{color}}" name="color" class="form-control" id="exampleInputEmail1" placeholder="{{color}}">
+        </div>
+        <input type="submit" value="update" class="btn btn-default">
+    </form>
+</template>

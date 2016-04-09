@@ -1,0 +1,21 @@
+/*
+ * Import All global styling
+ */
+@import "imports/mixins.less";
+@import "imports/bootstrap-3.3.6/less/bootstrap.less";
+//@import "fonts.less";
+@import "imports/custom-variables";
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  @media @xs {
+    background: red;
+  }
+}
